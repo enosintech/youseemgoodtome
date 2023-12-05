@@ -1,8 +1,4 @@
-# React + Vite
+# You Seem Good To Me
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You seem good to me is an upcoming brand focused on self acceptance. This website being developed as the brand website and will serve as a blog. The website is developed in React JS. Other technologies used include,
+Redux, React Spring, threeJS etc.
