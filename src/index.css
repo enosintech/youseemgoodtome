@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse {
+    from {
+        text-shadow: none;
+    }
+
+    to {
+        text-shadow: 0 0 8px white;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity:0;
+    }
+    9% {
+        opacity:0;
+    }
+    10% {
+        opacity:.5;
+    }
+    13% {
+        opacity:0;
+    }
+    20% {
+        opacity:.5;
+    }
+    25% {
+        opacity:1;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: none;
+    }
+    to {
+        box-shadow:0px 0px 0px 5px rgb(240, 201, 251);
+    }
+}
+
+@keyframes rotate-cube {
+    0% {
+        transform: rotateX(0) rotateY(0);
+    }
+    25% {
+        transform: rotateX(-20deg) rotateY(180deg); 
+    }
+    50% {
+        transform: rotateX(-20deg) rotateY(-180deg);
+    }
+    75% {
+        transform: rotateX(20deg) rotateY(-180deg);
+    }
+    100% {
+        transform: rotateX(0) rotateY(0);
+    }
+}
+
+.avatarLayer {
+    bottom: 1500px !important;
+}
+
+.back {
+    background-color: black;
+    transform: translateZ(-225px) rotateY(-180deg);
+    border-radius: 10px;
+}
+
+.bottom {
+    background-color: black;
+    transform: translateY(225px) rotateX(90deg);
+    border-radius: 10px;
+}
+
+.cubeAnimate {
+    animation: rotate-cube 20s ease-in-out infinite;
+}
+
+.cube {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.front {
+    background-color: black;
+    transform: translateZ(225px);
+    border-radius: 10px;
+}
+
+.flicker {
+    animation: flicker 2s infinite;
+}
+
+.glow {
+    animation: glow 1.5s alternate infinite;
+}
+
+.hoverContainer {
+    height: 1.15em;
+    font-size: 4rem;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💜</text></svg>") 16 0, auto;
+}
+
+.hoverContainer:hover .upper {
+    transform: translateY(-45px);
+}
+
+.hoverContainer:hover .lower {
+    transform: translateY(30px);
+    animation: none;
+}
+
+.inside {
+    top: 40%;
+    transform: translateY(-40%);
+    text-align: center;
+    z-index: 2;
+    font-size: 1rem;
+    text-shadow:  0 0 0.2em rgb(59, 7, 100);
+}
+
+.lower {
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 52.5%, #fff 52.5%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    z-index: 1;
+    animation: pulse 2s ease-in-out alternate infinite;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.left {
+    background-color: black;
+    transform: translateX(-225px) rotateY(-90deg);
+    border-radius: 10px;
+}
+
+.parallaxContainer {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+.parallaxContainer::-webkit-scrollbar {
+    display: none; 
+}
+
+.perspective-text {
+    color: black;
+    font-family: 'Archivo', sans-serif;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    font-size: 58px;
+    font-weight: bold;
+}
+
+.perspective-line {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.perspective-line:nth-child(odd) {
+    transform: skew(60deg, -30deg) scaleY(0.667);
+}
+
+.perspective-line:nth-child(even) {
+    transform: skew(0deg, -30deg)  scaleY(1.333);
+}
+
+.perspective-line:nth-child(1){
+    left: 29px;
+}
+
+.perspective-line:nth-child(2){
+    left: 58px;
+}
+
+.perspective-line:nth-child(3){
+    left: 87px;
+}
+
+.perspective-line:nth-child(4){
+    left: 116px;
+}
+
+.perspective-line:nth-child(5){
+    left: 145px;
+}
+
+.perspective-text:hover p {
+    transform: translate(0, -50px);
+}
+
+p {
+    margin: 0;
+    height: 50px;
+    line-height: 50px;
+    transition: all 0.2s ease-in-out;
+}
+
+.right {
+    background-color: black;
+    transform: translateX(225px) rotateY(90deg);
+    border-radius: 10px;
+}
+
+.scrollLayer {
+    top: 750px !important;
+}
+
+.side {
+    background-color: black;
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.top {
+    background-color: black;
+    transform: translateY(-225px) rotateX(90deg);
+    border-radius: 10px;
+}
+
+.upper {
+    top: 0;
+    height: 52.5%;
+    overflow: hidden;
+    z-index: 3;
+}
